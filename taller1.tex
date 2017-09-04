@@ -18,67 +18,46 @@ Nombre: Carol Vanessa Barrera L\'opez
 \item {\bf Esfera:} Modelo para los diapiros.
 	\begin{enumerate}
 	\item Demostraci\'on de la ecuaci\'on:
-	blablabla
-	\item Se realiz\'o una grafica con tres curvas de la anomal\'ia para diferentes z, cuando la densidad de la esfera era mayor a la densidad del suelo y una curva mostrando la anomal\'ia consecuente a una esfera con una densidad menor que la densidad del suelo (caso del diapiro).
-	\includegraphics[width=12cm]{AEsfera.pdf}\centering
-	Se puede observar que a mayor z, la curva de la anomal\'ia gravitacional tiene menor altura (por ende menor gmax). Esto se debe a que la relaci\'on entre $g(x)$ y $z$ es directamente proporcional.
+	El efecto de gravedad en un punto P de una esfera en direcci\'on $d$ (donde $d$ es la distancia del centro de la esfera al punto) es  $g_d =\frac{GM}{d^{2}}$. Pero debemos hallar la componente vertical, por lo tanto $g = g_d\cos(\theta)$. Como $\cos(\theta)= \frac{z}{d}$, obtenemos entonces que $g =\frac{GMz}{d^{3}}$ (1). La masa en este caso se expresa como la diferencia de densidades entre el suelo($\rho_s$) y la esfera($\rho_e$), y el volumen de la esfera, obteniendo as\'i que $M = (\rho_e-\rho_s)\frac{4}{3}r^{3}\pi $. Ahora expresamos $d$ en t\'erminos de $x$ (la distancia en superficie del punto P al centro de la esfera) y $z$ (profundidad de la esfera), $d = (x^{2}+z^{2})^{\frac{1}{2}}$. Reemplazamos en (1) todo lo anterior, obteniendo as\'i que
+\begin{equation*}
+g(x) = G(\rho_e-\rho_s)\frac{4}{3}r^{3}\pi \frac{z}{(x^{2}+z^{2})^{\frac{3}{2}}}
+\end{equation*}
+
+El $g_{max}$ se obtendr\'ia en $x=0$ (cuando estamos sobre la esfera) y ser\'ia 
+\begin{equation*}
+g_{max}(x) = G(\rho_e-\rho_s)\frac{4}{3}r^{3}\pi \frac{1}{z^{2}}
+\end{equation*}
+
+	\item Se realiz\'o una gr\'afica con tres curvas de la anomal\'ia para diferentes z, cuando la densidad de la esfera era mayor a la densidad del suelo y una curva mostrando la anomal\'ia consecuente a una esfera con una densidad menor que la densidad del suelo (caso del diapiro).Se puede observar que a mayor z, la curva de la anomal\'ia gravitacional tiene menor altura (por ende menor gmax). Esto se debe a que la relaci\'on entre $g(x)$ y $z$ es inversamente proporcional. Tambi\'en se puede observar que a mayor z, la curva es m\'as ancha, siendo menos clara la anomal\'ia. En el caso del diapiro se puede observar como obtenemos una anomal\'ia negativa. Esto se debe a que la relaci\'on entre $g(x)$ y $M$ es directamente proporcional, por ende si la densidad de la esfera es menor, la gravedad que va a ejercer con respecto al suelo va a ser menor de igual manera. 
+	\includegraphics[width=10cm]{AEsfera.pdf}
+	\item Se calcularon los half-with, $x_{med}$ de todas las configuraciones para cuando $g = g_{max}/2$ . Luego se halló el coeficiente entre z y $x_{med}$. NO ME SALEEE.
 	\end{enumerate}
 
-\item Evaluate the following integral 
+\item {\bf Cilindro:} Modelo para anticlinales y sinclinales.
+	\begin{enumerate}
+	\item El valor m\'aximo de la gravedad ($g_{max}$) en el caso de un cilindro infinito de radio $r$, densidad $\rho_c$, enterrado horizontalmente a una profundidad z es: 
 \begin{equation*}
-\int_{2}^{x} \sinh{2y}\, \mathrm{d}y
+g_{max} = 2\pi G(\rho_c-\rho_s)r^{2}\frac{1}{z}
 \end{equation*}
-in the case where:
-    \begin{enumerate}
-    \item $x = 5$
-    \\\line(1,0){250}
-    \\\line(1,0){250}
-    \\\line(1,0){250}
-    \item $x = 9$
-    \\\line(1,0){250}
-    \\\line(1,0){250}
-    \\\line(1,0){250}
-    \end{enumerate}
-    
-\item Find the determinant of the following 3x3 matrix:
-\begin{figure}[h!]%This example matrix has been enclosed in a figure to give us more positioning options
-\centering
-\begin{math}
-\begin{pmatrix}
-1 & 6 & 4 \\
-3 & 1 & 7 \\
-9 & 4 & 5
-\end{pmatrix}
-\end{math}
-\end{figure}
-\\\line(1,0){300}
-\\\line(1,0){300}
-\\\line(1,0){300}
-
+	\item Se realiz\'o una gr\'afica con tres curvas de anomal\'ia para diferentes z con una densidad del cilindro mayor a la densidad del suelo. Se observan las mismas tendencias que en el caso de la esfera. Se puede observar que a mayor z, la curva de la anomal\'ia gravitacional tiene menor altura (por ende menor gmax) y tambi\'en se puede observar que a mayor z, la curva es m\'as ancha, siendo menos clara la anomal\'ia. Esto se debe a que, como se dijo anteriormente, la relaci\'on entre $g(x)$ y $z$ es inversamente proporcional, por ende si aumentamos la profundidad, disminu\'imos la anomal\'ia gravim\'etrica.
+	\includegraphics[width=10cm]{ACilindro.pdf}
+	\item Se calcularon los half-with, $x_{med}$ de todas las configuraciones para cuando $g = g_{max}/2$ . Luego se halló el coeficiente entre z y $x_{med}$. TAMPOCO ME SALEEE.
+	\end{enumerate}
+\item {\bf Losa horizontal semi-infinita:} Modelo de una falla vertical.
+	\begin{enumerate}
+	\item El perfil de anomal\'ia gravitacional tomado perpendicularmente al l\'imite de una losa con grosor $h$, densidad $\rho_l$, enterrada a una profundidad $z$ es:
+	\begin{equation*}
+	g(x) = 2G(\rho_l-\rho_s)h[\frac{\pi}{2} + \arctan(\frac{x}{z})]
+	\end{equation*}
+	\item Se realiz\'o una gr\'afica con tres curvas de anomal\'ia para diferentes z, diferentes grosores y diferentes densidades. En ella se puede apreciar que la anomal\'ia es mayor si se aumenta el grosor y la densidad de la losa, variables relacionadas con la masa, la cual es directamente proporcional a $g(x)$. Como los modelos anteriores, si se aumenta la profundidad (z), la anomal\'ia va a disminuir y tambi\'en la claridad de donde se encuentra el objeto que la produce, es decir, el cambio no va a ser tan marcado, como se puede evidenciar con la losa m\'as somera y la m\'as profunda en el diagrama. Las densidades se encuentran en kilogramos sobre metro c\'ubico.
+	\includegraphics[width=12cm]{ALosa.pdf}
+	\item Se realiz\'o una gr\'afica con la primera y la segunda derivada de los perfiles de anomal\'ias obtenidos anteriormente. Se puede ver como la primera derivada se asemeja a los perfiles de anomal\'ia de los modelos de la esfera y del cilindro. En cuanto a la segunda derivada se puede decir que se asemeja al perfil de anomal\'ia generado por una falla, en la cual la anomal\'ia positiva se asocia con la secci\'on de la placa que sube y la anomal\'ia negativa con aquel que baja. 
+	\includegraphics[width=12cm]{derivadas.pdf}
+	\end{enumerate}
 \end{enumerate}%ends the numbering
 
-\subsection*{Section B}
+\subsection*{1.2 M\'etodo de Nettleton, correcciones de Bouger y Aire libre}
 
-\begin{enumerate}
 
-\item Determine the following limit:
-\begin{equation*}
-\lim_{x \to +\infty} \frac{\sin{x}}{x^2}
-\end{equation*}
-\\\line(1,0){300}
-\\\line(1,0){300}
-\\\line(1,0){300}
-
-\item Prove Pythagoras' Theorem.
-\\\line(1,0){300}
-\\\line(1,0){300}
-\\\line(1,0){300}
-
-\item Describe the Gram-Schmidt Algorithm.
-\\\line(1,0){300}
-\\\line(1,0){300}
-\\\line(1,0){300}
-
-\end{enumerate}
 
 \end{document}
