@@ -34,13 +34,21 @@ plt.close()
 
 
 #relacion xhalf y z
-xhalf1 = 2*(2*np.log(2))**0.5*np.std(esf1)
-xhalf2 = 2*(2*np.log(2))**0.5*np.std(esf2)
-xhalf3 = 2*(2*np.log(2))**0.5*np.std(esf3)
-xhalfDip = 2*(2*np.log(2))**0.5*np.std(Diapiro)
 
-#print xhalf1, xhalf2, xhalf3, xhalfDip
-#NOSALEEE
+gmed1 = max(esf1)/2
+gmed2 = max(esf2)/2
+gmed3 = max(esf3)/2
+gmedDip = max(abs(Diapiro))/2
+a = np.argwhere(esf1>gmed1)
+b = np.argwhere(esf2>gmed2)
+c = np.argwhere(esf3>gmed3)
+d = np.argwhere(abs(Diapiro)>gmedDip)
+
+xhalf1 = (int(max(a))-int(min(a)))*160/1000.0
+xhalf2 = (int(max(b))-int(min(b)))*160/1000.0
+xhalf3 = (int(max(c))-int(min(c)))*160/1000.0
+xhalfDip = (int(max(d))-int(min(d)))*160/1000.0
+print xhalf1/z1, xhalf2/z2, xhalf3/z3, xhalfDip/z2
 
 
 #Caso Cilindro
@@ -48,9 +56,9 @@ def anomCil(x,z, dcil):
 	r= 10.0
 	return 2*np.pi*G*(r**2)*(dcil-dsuelo)*z/((x)**2+(z)**2)
 
-cil1 = anomCil(x,z1, 10000.0)
-cil2 = anomCil(x,z2, 10000.0)
-cil3 = anomCil(x,z3, 10000.0)
+cil1 = anomCil(x,z1, 3000.0)
+cil2 = anomCil(x,z2, 3000.0)
+cil3 = anomCil(x,z3, 3000.0)
 
 plt.plot(x,cil1, label = "P. Somera")
 plt.plot(x,cil2, label = "P. Media")
@@ -64,11 +72,18 @@ plt.savefig("ACilindro.pdf")
 plt.close()
 
 #relacion xhalf y z cilindro
-xm1 = 2*(2*np.log(2))**0.5*np.std(cil1)
-xm2 = 2*(2*np.log(2))**0.5*np.std(cil2)
-xm3 = 2*(2*np.log(2))**0.5*np.std(cil3)
+gmedcil1 = max(cil1)/2
+gmedcil2 = max(cil2)/2
+gmedcil3 = max(cil3)/2
+acil = np.argwhere(cil1>gmedcil1)
+bcil = np.argwhere(cil2>gmedcil2)
+ccil = np.argwhere(cil3>gmedcil3)
 
-print z1/xm1, z2/xm2, z3/xm3
+xhalfcil1 = (int(max(acil))-int(min(acil)))*120/1000.0
+xhalfcil2 = (int(max(bcil))-int(min(bcil)))*120/1000.0
+xhalfcil3 = (int(max(ccil))-int(min(ccil)))*120/1000.0
+
+print xhalfcil1/z1, xhalfcil2/z2, xhalfcil3/z3
 
 #Caso Losa
 def anomLosa(x, h, z, dLosa):
@@ -100,7 +115,7 @@ dxL3 = Dx(x, 40.0, 50.0, 7000.0)
 
 #Segundas derivadas
 def D2x(x, h, z, dLosa):
-	return 2*G*(dLosa-dsuelo)*h*(-2*x*z/(x*x+z*z)**2)
+	return 2*G*(dLosa-dsuelo)*h*(2*x*z/(x*x+z*z)**2)
 
 d2xL1 = D2x(x, 20.0, 10.0, 10000.0)
 d2xL2 = D2x(x, 30.0, 20.0, 5000.0)
